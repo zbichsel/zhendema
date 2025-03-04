@@ -1,20 +1,25 @@
 *{
     background-color: blueviolet;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 h1 {
-    color: white;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16rem;
     padding: 10px;
 }
 
 ul { 
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    font-size: 1.3rem;
 }
 p {
-    color: white;
-    margin: 0 auto;
-    text-align: center;
-    padding: 10px;
+    margin: 4px;
+    padding: 8px;
 }
