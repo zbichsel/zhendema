@@ -16,10 +16,20 @@ ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
     font-size: 1.3rem;
 }
 p {
     margin: 4px;
     padding: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 8rem;
+    }
+    ul {
+        font-size: 1rem;
+        padding: 0;
+    }
 }
