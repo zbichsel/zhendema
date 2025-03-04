@@ -29,7 +29,7 @@ p {
     and (height: 926px)
     and (-webkit-device-pixel-ratio: 3) {
         h1 {
-            font-size: 8rem;
+            font-size: 3rem;
         }
         ul {
             font-size: 1rem;
