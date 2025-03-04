@@ -26,10 +26,9 @@ p {
 
 @media only screen
     and (width: 428px)
-    and (height: 926px)
     and (-webkit-device-pixel-ratio: 3) {
         h1 {
-            font-size: 3rem;
+            font-size: 8rem;
         }
         ul {
             font-size: 1rem;
