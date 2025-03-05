@@ -87,6 +87,28 @@ h1 {
     }
 
 @media only screen
+    and (min-width: 414px)
+    and (-webkit-device-pixel-ratio: 2) {
+        h1 {
+            font-size: 4rem;
+        }
+        ul {
+            /* font-size: 1rem; */
+            margin: 2px 3px;
+            padding: 0;
+
+        }
+
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            font-size: 4px;
+        }
+
+    }
+
+@media only screen
     and (min-width: 428px)
     and (-webkit-device-pixel-ratio: 3) {
         h1 {
