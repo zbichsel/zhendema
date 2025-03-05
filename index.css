@@ -64,68 +64,120 @@ h1 {
     border-radius: 10px;
 }
 
+/* 375x667 pixels at 326 ppi for iPhones 6, 6s, 7, 8, SE (1st gen) */
 @media only screen
-    and (min-width: 375px)
-    and (-webkit-device-pixel-ratio: 3) {
-        h1 {
-            font-size: 4rem;
-        }
-        ul {
-            /* font-size: 1rem; */
-            margin: 2px 3px;
-            padding: 0;
-
-        }
-
-        .grid-container {
-            display: flex;
-            flex-direction: column;
-            padding: 0;
-            font-size: 4px;
-        }
-
-    }
-
-@media only screen
-    and (min-width: 414px)
+    and (width: 375px)
+    and (height: 667px)
     and (-webkit-device-pixel-ratio: 2) {
-        h1 {
-            font-size: 4rem;
-        }
-        ul {
-            /* font-size: 1rem; */
-            margin: 2px 3px;
-            padding: 0;
-
-        }
-
+    h1 {
+        font-size: 5rem;
+    }
         .grid-container {
             display: flex;
             flex-direction: column;
-            padding: 0;
-            font-size: 4px;
         }
-
+    }
+    
+/* 750x1334 pixels at 326 ppi for iPhones 7 (2016), 8 (2017), SE (1st to 3rd gen) */
+@media only screen
+    and (width: 414px)
+    and (height: 896px)
+    and (-webkit-device-pixel-ratio: 2) {
+    h1 {
+        font-size: 6rem;
+    }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
+/* 1242x2688 pixels at 458 ppi for iPhones 11 Xs Max, 11 Pro Max */
 @media only screen
-    and (min-width: 428px)
+    and (width: 414px)
+    and (height: 896px)
     and (-webkit-device-pixel-ratio: 3) {
-        h1 {
-            font-size: 8rem;
-        }
-        ul {
-            /* font-size: 1rem; */
-            margin: 4px 6px;
-            padding: 0;
-
-        }
-
+    h1 {
+        font-size: 6rem;
+    }
         .grid-container {
             display: flex;
             flex-direction: column;
-            padding: 0;
-            font-size: 4px;
         }
+    }
 
+/* 828x1792 pixels at 326 ppi for iPhones 11, Xr */
+@media only screen
+    and (width: 414px)
+    and (height: 896px)
+    and (-webkit-device-pixel-ratio: 2) {}
+
+/* 1080x2340 pixels at 476 ppi for iPhones X, Xs, 11 Pro, 12 Mini, 13 Mini */
+@media only screen
+    and (width: 375px)
+    and (height: 812px)
+    and (-webkit-device-pixel-ratio: 3) {
+    h1 {
+        font-size: 5rem;
+    }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+/*1284x2778 pixels at 458 ppi for iPhones 12 Pro Max, 13 Pro Max, 14 Plus */
+@media only screen
+    and (width: 428px)
+    and (height: 926px)
+    and (-webkit-device-pixel-ratio: 3) {
+    h1 {
+        font-size: 6rem;
+    }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+/*1170x25332 pixels at 460 ppi for iPhones 12, 12 Pro, 13, 13 Pro, 14 */
+@media only screen
+    and (width: 390px)
+    and (height: 844px)
+    and (-webkit-device-pixel-ratio: 3) {
+    h1 {
+        font-size: 5rem;
+    }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+/* 1284x2778 pixels at 460 ppi for iPhones 14 Pro Max, 15 Plus, 15 Pro Max */
+@media only screen
+    and (width: 430px)
+    and (height: 932px)
+    and (-webkit-device-pixel-ratio: 3) {
+    h1 {
+        font-size: 6rem;
+    }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+/* 1179x2556 pixels at 460 ppi for iPhones 14 Pro, 15, 15 Pro */
+@media only screen
+    and (width: 393px)
+    and (height: 852px)
+    and (-webkit-device-pixel-ratio: 3) {
+    h1 {
+        font-size: 5rem;
+    }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
     }
