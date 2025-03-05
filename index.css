@@ -2,6 +2,8 @@
     background-color: blueviolet;
     font-family: 'Times New Roman', Times, serif;
     color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 h1 {
@@ -15,7 +17,6 @@ h1 {
 .grid-container {
     display: grid;
     grid-gap: 10px;
-    /* background-color: #2196F3; */
     padding: 10px;
 }
 
@@ -23,7 +24,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(255, 255, 255, 0.8); */
+    background-color: violet;
+    border: 1px solid white;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
