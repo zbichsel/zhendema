@@ -1,17 +1,8 @@
 * {
     background-color: blueviolet;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
-}
-
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 h1 {
@@ -19,6 +10,10 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 4px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .grid-container {
@@ -35,7 +30,9 @@ h1 {
     border: 1px solid white;
     text-align: center;
     padding: 20px 0;
-    /* font-size: 30px; */
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .item1 {
