@@ -70,6 +70,24 @@ h1 {
     border-radius: 10px;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: violet;
+    border: 1px solid white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 8rem;
