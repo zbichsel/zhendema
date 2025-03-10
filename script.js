@@ -1,5 +1,24 @@
 var buttonEl = document.getElementById("button");
 
+var themeSwitcher = document.querySelector('#theme-switcher');
+var container = document.querySelector('.container');
+
+// SET DEFAULT MODE TO DARK
+var mode = 'dark';
+
+// LISTEN FOR CLICK EVENT ON TOGGLE SWITCH
+themeSwitcher.addEventListener('click', function() {
+    // IF MODE IS DARK APPLY LIGHT BACKGROUND
+    if (mode === 'dark') {
+        mode = 'light';
+        container.setAttribute('class', 'light');
+    } else {
+        // IF MODE IS LIGHT APPLY DARK BACKGROUND
+        mode = 'dark';
+        container.setAttribute('class', 'dark');
+    }
+});
+
 buttonEl.addEventListener("click", function() {
     const grid = document.querySelector('.grid');
 
@@ -28,3 +47,4 @@ buttonEl.addEventListener("click", function() {
         }
     }
 });
+
