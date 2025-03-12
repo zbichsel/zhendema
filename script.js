@@ -3,6 +3,8 @@ var container = document.querySelector('.container');
 
 const playGame = document.querySelector('button');
 const hero = document.getElementsByClassName('grid-container');
+const zhendema = document.querySelector('h1');
+const h2El = document.querySelector('h2');
 
 // SET DEFAULT MODE TO DARK
 var mode = 'dark';
@@ -151,7 +153,13 @@ function buildQuiz(questions, quizContainer, resultsContainer, submitButton) {
 
 playGame.addEventListener('click', function () {
     buildQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+    zhendema.style.display = 'none';
     playGame.style.display = 'none';
     hero[0].style.display = 'none';
+    h2El.style.display = 'block';
+    h2El.style.cursor = 'pointer';
     submitButton.style.display = 'block';
+    h2El.addEventListener('click', function () {
+        location.reload();
+    });
 });
