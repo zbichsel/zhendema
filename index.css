@@ -1,35 +1,28 @@
 * {
-    margin: 0;
-    padding: 0;
+    font-family: Poppins, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
 }
 
 body {
-    background-color: black;
-    margin-top: 0;
-    padding: 0;
+    margin: 0;
+    background-color: rgb(10, 10, 10);
 }
 
 .dark {
     background-color: rgb(10, 10, 10);
     color: #bebebe;
+    height: 100vh;
 }
 
 .toggle {
-    /* border-style: outset; */
-    width: 400px;
-    /* background-color: rgb(10, 10, 10); */
-    /* color: green; */
-    font-family: Poppins, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    margin: 0 auto;
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .light {
@@ -74,15 +67,15 @@ body {
     transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: rgb(29, 128, 210);
 }
 
-input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px rgb(29, 128, 210);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -104,102 +97,108 @@ input:checked + .slider:before {
     margin: 20px;
 }
 
+
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 4px;
     font-family: 'Noto Sans SC', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+}
+
+#game-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    font-size: 20px;
+    background-color: rgb(29, 128, 210);
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+#game-start:hover {
+    background-color: rgb(18, 130, 222);
 }
 
 .grid-container {
     display: grid;
     grid-gap: 10px;
+    margin: 0;
     padding: 10px;
+    list-style-type: none;    
 }
 
-.grid-container>div {
+.grid-container>div, ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid white; */
     text-align: center;
     padding: 20px 0;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    transform: rotate(25deg);
 }
 
-.item1 {
+.item1, .item6 {
     grid-column: 3 / span 1;
-    border-radius: 10px;
 }
 
-.item2 {
+.item2, .item7 {
     grid-column: 1 / span 1;
-    border-radius: 10px;
 }
 
 .item3 {
     grid-column: 2 / span 2;
-    border-radius: 10px;
 }
 
 .item4 {
     grid-column: 2 / span 1;
-    border-radius: 10px;
 }
 
 .item5 {
     grid-column: 1 / span 2;
-    border-radius: 10px;
 }
 
-.item6 {
-    grid-column: 3 / span 1;
-    border-radius: 10px;
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* height: 100vh; */
 }
 
-.item7 {
-    grid-column: 1 / span 1;
-    border-radius: 10px;
-}
-
-.button {
+.question {
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid white;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: 20px;
+}
+
+.answers {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+#submit {
+    font-size: 20px;
+    background-color: #297;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
     cursor: pointer;
-    background-color: #fff;
+    margin: 20px auto;
 }
 
-#section {
-    margin: 0 auto;
-    padding: 10px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    align-items: center;;
-    
+#submit:hover {
+    background-color: #3a8;
 }
 
 @media only screen and (max-width: 600px) {
@@ -211,19 +210,6 @@ h1 {
     .grid-container {
         display: flex;
         flex-direction: column;
-    }
-
-    section {
-        font-size: 16px;
-    }
-
-    .button {
-        display: none;
-    }
-
-    .grid {
-        display: flex;
-        flex-wrap: wrap;
     }
 }
 
