@@ -43,6 +43,7 @@ buttonEl.addEventListener("click", function() {
             cell.style.justifyContent = "center";
             cell.style.alignItems = "center";
             cell.style.display = "flex";
+            cell.style.backgroundColor = "white";
             buttonEl.style.display = "none";
         }
     }
