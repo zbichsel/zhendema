@@ -26,7 +26,7 @@ body {
 }
 
 .light {
-    background-color: #f0ead6;
+    background-color: #eceae0;
     color: black;
 }
 
@@ -191,7 +191,7 @@ h1 {
     background-color: #297;
     color: #fff;
     border: 0px;
-    border-radius: 3px;
+    border-radius: 20px;
     padding: 20px;
     cursor: pointer;
     margin: 20px auto;
