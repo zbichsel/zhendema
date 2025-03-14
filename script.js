@@ -27,7 +27,8 @@ var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
 quizContainer.style.backgroundColor = 'rgb(82, 82, 82)';
-quizContainer.style.padding = '20px';
+quizContainer.style.display = 'none';
+quizContainer.style.padding = '60px';
 quizContainer.style.borderRadius = '10px';
 
 var myQuestions = [
@@ -160,6 +161,7 @@ playGame.addEventListener('click', function () {
     zhendema.style.display = 'none';
     playGame.style.display = 'none';
     hero[0].style.display = 'none';
+    quizContainer.style.display = 'block';
     h2El.style.display = 'block';
     h2El.style.cursor = 'pointer';
     submitButton.style.display = 'block';

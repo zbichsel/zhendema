@@ -188,7 +188,7 @@ h1 {
 
 #submit {
     font-size: 20px;
-    background-color: #297;
+    background-color: rgb(29, 128, 210);
     color: #fff;
     border: 0px;
     border-radius: 20px;
@@ -198,13 +198,36 @@ h1 {
 }
 
 #submit:hover {
-    background-color: #3a8;
+    background-color: rgb(18, 130, 222);
 }
 
 @media only screen and (max-width: 600px) {
+    .toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
     h1 {
         font-size: 8rem;
         font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+    .center {
+        width: 100vw;
+        padding: 0;
+        margin: 0 auto;
     }
 
     .grid-container {
