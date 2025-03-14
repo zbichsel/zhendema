@@ -1,5 +1,5 @@
-var themeSwitcher = document.querySelector('#theme-switcher');
-var container = document.querySelector('.container');
+const themeSwitcher = document.querySelector('#theme-switcher');
+const container = document.querySelector('.container');
 
 const playGame = document.querySelector('button');
 const hero = document.getElementsByClassName('grid-container');
@@ -25,6 +25,10 @@ themeSwitcher.addEventListener('click', function () {
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
+
+quizContainer.style.backgroundColor = 'rgb(82, 82, 82)';
+quizContainer.style.padding = '20px';
+quizContainer.style.borderRadius = '10px';
 
 var myQuestions = [
     {
