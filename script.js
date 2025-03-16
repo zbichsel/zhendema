@@ -1,171 +1,150 @@
-const themeSwitcher = document.querySelector('#theme-switcher');
 const container = document.querySelector('.container');
 
-const playGame = document.querySelector('button');
 const hero = document.getElementsByClassName('grid-container');
 const zhendema = document.querySelector('h1');
 const h2El = document.querySelector('h2');
 
-// SET DEFAULT MODE TO DARK
-var mode = 'dark';
 
-// LISTEN FOR CLICK EVENT ON TOGGLE SWITCH
-themeSwitcher.addEventListener('click', function () {
-    // IF MODE IS DARK APPLY LIGHT BACKGROUND
-    if (mode === 'dark') {
-        mode = 'light';
-        container.setAttribute('class', 'light');
-    } else {
-        // IF MODE IS LIGHT APPLY DARK BACKGROUND
-        mode = 'dark';
-        container.setAttribute('class', 'dark');
-    }
-});
-
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
-
-quizContainer.style.backgroundColor = 'rgb(82, 82, 82)';
-quizContainer.style.display = 'none';
-quizContainer.style.padding = '60px';
-quizContainer.style.borderRadius = '10px';
-
-var myQuestions = [
-    {
-        question: "你好！",
-        answers: {
-            a: "Hello",
-            b: "Goodbye",
-            c: "Thank you"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "你有一节历史课，对不对？",
-        answers: {
-            a: "You have a history class, right?",
-            b: "You have a math class, right?",
-            c: "You have a science class, right?"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "火车站在哪里？",
-        answers: {
-            a: "Where is the bus station?",
-            b: "Where is the train station?",
-            c: "Where is the airport?"
-        },
-        correctAnswer: "b"
-    },
-    {
-        question: "你叫什么名字？",
-        answers: {
-            a: "Where are you?",
-            b: "What time is it?",
-            c: "What is your name?"
-        },
-        correctAnswer: "c"
-    }
-];
-
-function buildQuiz(questions, quizContainer, resultsContainer, submitButton) {
-
-    function showQuestions(questions, quizContainer) {
-        // CODE GOES HERE
-        // WE'LL NEED A PLACE TO STORE THE OUTPUT AND THE ANSWERS CHOICES
-        var output = [];
-        var answers;
-
-        // FOR EACH QUESTION...
-        for (var i = 0; i < questions.length; i++) {
-
-            // FIRST RESET THE LIST OF ANSWERS
-            answers = [];
-
-            // FOR EACH AVAILABLE ANSWER TO THIS QUESTION...
-            for (letter in questions[i].answers) {
-
-                // ...ADD AN HTML RADIO BUTTON
-                answers.push(
-                    '<label>'
-                        + '<input type="radio" name="question' + i + '" value="' + letter + '">'
-                        + letter + ': '
-                        + questions[i].answers[letter]
-                    + '</label>'
-                );
-            }
-
-            // ADD THIS QUESTION AND ITS ANSWERS TO THE OUTPUT
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                + '<div class="answers">' + answers.join('') + '</div>'
-            );
-        }
-
-        // FINALLY COMBINE OUR OUTPUT LIST INTO ONE STRING OF HTML AND PUT IT ON THE PAGE
-        quizContainer.innerHTML = output.join('');
+//FIXING THEME SWITCHER
+//======================
+function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+    if (localStorageTheme !== null) {
+        return localStorageTheme;
     }
 
-    function showResults(questions, quizContainer, resultsContainer) {
-
-        // CODE GOES HERE
-        // GATHER ANSWER CONTAINERS FROM QUIZ
-        var answerContainers = quizContainer.querySelectorAll('.answers');
-
-        // KEEP TRACK OF USER'S ANSWERS
-        var userAnswer = '';
-        var numCorrect = 0;
-
-        // FOR EACH QUESTION...
-        for (var i = 0; i < questions.length; i++) {
-
-            // FIND SELECTED ANSWER
-            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-
-            // IF ANSWER IS CORRECT
-            if (userAnswer === questions[i].correctAnswer) {
-
-                // ADD TO THE NUMBER OF CORRECT ANSWERS
-                numCorrect++;
-
-                // COLOR THE ANSWERS GREEN
-                answerContainers[i].style.color = 'lightgreen';
-            } else {
-                
-                // IF ANSWER IS WRONG OR BLANK
-                // COLOR THE ANSWERS RED
-                answerContainers[i].style.color = 'red';
-            }
-        }
-
-        // SHOW NUMBER OF CORRECT ANSWERS OUT OF TOTAL
-        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+    if (systemSettingDark.matches) {
+        return "dark";
     }
 
-    // SHOW THE QUESTIONS
-    showQuestions(questions, quizContainer);
+    return "light";
+}
 
-    // WHEN USER CLICKS SUBMIT, SHOW THE RESULTS
-    submitButton.addEventListener('click', function () {
-        showResults(questions, quizContainer, resultsContainer);
+function updateThemeOnHtmlEl({ theme }) {
+    document.querySelector("html").setAttribute("data-theme", theme);
+}
+
+const button = document.querySelector("[data-theme-toggle]");
+if (button) {
+    // Initial theme setting
+    let currentThemeSetting = calculateSettingAsThemeString({
+        localStorageTheme: localStorage.getItem("theme"),
+        systemSettingDark: window.matchMedia("(prefers-color-scheme: dark)")
+    });
+
+    button.addEventListener("click", (event) => {
+        const localStorageTheme = localStorage.getItem("theme");
+        const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // Get the updated theme
+        let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+
+        const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+        localStorage.setItem("theme", newTheme);
+        updateThemeOnHtmlEl({ theme: newTheme });
     });
 }
 
-// DISPLAY THE QUIZ
-// buildQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+// Listen to changes in system color preference
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    const localStorageTheme = localStorage.getItem("theme");
+    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-playGame.addEventListener('click', function () {
-    buildQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-    zhendema.style.display = 'none';
-    playGame.style.display = 'none';
-    hero[0].style.display = 'none';
-    quizContainer.style.display = 'block';
-    h2El.style.display = 'block';
-    h2El.style.cursor = 'pointer';
-    submitButton.style.display = 'block';
-    h2El.addEventListener('click', function () {
-        location.reload();
-    });
+    let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+    updateThemeOnHtmlEl({ theme: currentThemeSetting });
 });
+//======================
+
+const quizQuestions = [
+    {
+        question: "你喜欢吃韩国菜？",
+        options: ["What time is it?", "Do you like Korean food?", "Where is the library?", "What time should we go to the supermarket?"],
+        correctAnswer: "Do you like Korean food?"
+    },
+    {
+        question: "明天下午他们会做飞机去美国，对不对？",
+        options: ["Tomorrow afternoon they will fly to the USA, right?", "This afternoon he will take a taxi to the train station.", "She and I will go to the cafe tomorrow morning", "Where is her new bed?"],
+        correctAnswer: "Tomorrow afternoon they will fly to the USA, right?"
+    },
+    {
+        question: "我也有一节新中文课。",
+        options: ["I have math class.", "I also have a new Chinese class.", "I will go to the park.", "Do you like Chinese food or Korean food?"],
+        correctAnswer: "I also have a new Chinese class."
+    }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+let timeLeft = 10;
+let timerInterval;
+
+function startQuiz() {
+    document.getElementById('start-button').style.display = 'none';
+    document.getElementById('grid-container').style.display = 'none';
+    displayQuestion();
+    startTimer();
+}
+
+function displayQuestion() {
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    const questionText = document.getElementById("question-text");
+    const answerButtons = document.getElementById("answer-buttons");
+
+    questionText.innerHTML = "";
+    answerButtons.innerHTML = "";
+
+    questionText.innerHTML = currentQuestion.question;
+
+    currentQuestion.options.forEach(option => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.classList.add("answer-buttons");
+        answerButtons.appendChild(button);
+
+        button.addEventListener("click", function () {
+            checkAnswer(option);
+        });
+    });
+}
+
+function checkAnswer(selectedOption) {
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+
+    if (selectedOption === currentQuestion.correctAnswer) {
+        score++;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < quizQuestions.length) {
+        displayQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+        timeLeft--;
+
+        document.getElementById("timer").textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            endQuiz();
+        }
+    }, 1000);
+}
+
+function endQuiz() {
+    clearInterval(timerInterval);
+
+    const scorePercentage = Math.round((score / quizQuestions.length) * 100);
+
+    const questionContainer = document.getElementById("question-container");
+    questionContainer.innerHTML = `
+        <h2>Quiz beendet!</h2>
+        <p>Dein Ergebnis: ${score} von ${quizQuestions.length}</p>
+        <p>Score Percentage: ${scorePercentage}%</p>
+    `;
+}
+
+document.getElementById('start-button').addEventListener('click', startQuiz);

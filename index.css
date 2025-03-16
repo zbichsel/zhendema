@@ -1,19 +1,28 @@
-* {
-    font-family: Poppins, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: auto;
+:root {
+    --grid-unit: 1rem;
+    --border-radius-base: 0.5rem;
+}
+
+[data-theme="light"] {
+    --color-bg: #eceae0;
+    --color-fg: #rgb(10, 10, 10);
+}
+
+[data-theme="dark"] {
+    --color-bg: #000;
+    --color-fg: #FFF;
 }
 
 body {
-    margin: 0;
-    background-color: rgb(10, 10, 10);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
 }
 
-.dark {
+/* .dark {
     background-color: rgb(10, 10, 10);
     color: #bebebe;
     height: 100vh;
-}
+} */
 
 .toggle {
     display: flex;
@@ -25,10 +34,11 @@ body {
     font-size: 16px;
 }
 
-.light {
+/* .light {
     background-color: #eceae0;
     color: black;
-}
+    height: 100vh;
+} */
 
 .switch {
     position: relative;
@@ -106,25 +116,6 @@ h1 {
     font-family: 'Noto Sans SC', sans-serif;
 }
 
-#game-start {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96px;
-    font-size: 20px;
-    background-color: rgb(29, 128, 210);
-    color: #fff;
-    border: 0px;
-    border-radius: 20px;
-    padding: 10px;
-    cursor: pointer;
-    margin: 20px auto;
-}
-
-#game-start:hover {
-    background-color: rgb(18, 130, 222);
-}
-
 .grid-container {
     display: grid;
     grid-gap: 10px;
@@ -161,44 +152,45 @@ h1 {
     grid-column: 1 / span 2;
 }
 
-.center {
+.quiz-container {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 10px;
+    /* height: 50vh; */
 }
 
-.question {
-    font-size: 20px;
-    font-weight: 600;
+#question-container {
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    width: 50vw;
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.answer-buttons {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+#start-button {
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-
-.answers {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-}
-
-#submit {
-    font-size: 20px;
-    background-color: rgb(29, 128, 210);
-    color: #fff;
-    border: 0px;
+    padding: 10px;
+    border: 1px solid black;
     border-radius: 20px;
-    padding: 20px;
-    cursor: pointer;
-    margin: 20px auto;
-}
-
-#submit:hover {
-    background-color: rgb(18, 130, 222);
 }
 
 @media only screen and (max-width: 600px) {
@@ -211,23 +203,11 @@ h1 {
         margin: 0 auto;
     }
 
-    h2 {
-        font-size: 2rem;
-        margin: 0 auto;
-        padding: 10px;
-    }
-
     h1 {
         font-size: 8rem;
         font-weight: 500;
         margin: 0;
         padding: 0;
-    }
-
-    .center {
-        width: 100vw;
-        padding: 0;
-        margin: 0 auto;
     }
 
     .grid-container {
@@ -254,7 +234,7 @@ h1 {
 
 @media only screen and (min-width: 768px) {
     h1 {
-        font-size: 16rem;
+        font-size: 6rem;
         font-weight: 800;
     }
 
