@@ -1,59 +1,18 @@
-const container = document.querySelector('.container');
+// THIS IS FOR SYSTEM SETTING THEME MODE
+//======================================
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-const hero = document.getElementsByClassName('grid-container');
-const zhendema = document.querySelector('h1');
-const h2El = document.querySelector('h2');
-
-
-//FIXING THEME SWITCHER
-//======================
-function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
-    if (localStorageTheme !== null) {
-        return localStorageTheme;
-    }
-
-    if (systemSettingDark.matches) {
-        return "dark";
-    }
-
-    return "light";
+if (prefersDarkScheme.matches) {
+    document.body.classList.add("dark-theme");
+} else {
+    document.body.classList.remove("dark-theme");
 }
+//=====================================
 
-function updateThemeOnHtmlEl({ theme }) {
-    document.querySelector("html").setAttribute("data-theme", theme);
-}
 
-const button = document.querySelector("[data-theme-toggle]");
-if (button) {
-    // Initial theme setting
-    let currentThemeSetting = calculateSettingAsThemeString({
-        localStorageTheme: localStorage.getItem("theme"),
-        systemSettingDark: window.matchMedia("(prefers-color-scheme: dark)")
-    });
 
-    button.addEventListener("click", (event) => {
-        const localStorageTheme = localStorage.getItem("theme");
-        const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-        // Get the updated theme
-        let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
-
-        const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
-        localStorage.setItem("theme", newTheme);
-        updateThemeOnHtmlEl({ theme: newTheme });
-    });
-}
-
-// Listen to changes in system color preference
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    const localStorageTheme = localStorage.getItem("theme");
-    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-    let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
-    updateThemeOnHtmlEl({ theme: currentThemeSetting });
-});
-//======================
-
+// THIS IS THE QUIZ CODE
+//=======================
 const quizQuestions = [
     {
         question: "你喜欢吃韩国菜？",
@@ -69,12 +28,27 @@ const quizQuestions = [
         question: "我也有一节新中文课。",
         options: ["I have math class.", "I also have a new Chinese class.", "I will go to the park.", "Do you like Chinese food or Korean food?"],
         correctAnswer: "I also have a new Chinese class."
+    },
+    {
+        question: "你喜欢茶还是咖啡？",
+        options: ["Do you like coke or pepsi?", "Do you want to talk a walk?", "Do you like tea or coffee?", "Where is the supermarket?"],
+        correctAnswer: "Do you like tea or coffee?"
+    },
+    {
+        question: "明天我们去图书馆吧！",
+        options: ["Let's go to the library tomorrow!", "I will go to the park.", "Where is the supermarket?", "Do you like Chinese food or Korean food?"],
+        correctAnswer: "Let's go to the library tomorrow!"
+    },
+    {
+        question: "我女儿的床很漂亮。",
+        options: ["My dad's couch is very comfortable.", "My daughter's bed is very beautiful.", "I have a new car.", "Where is the library?"],
+        correctAnswer: "My daughter's bed is very beautiful."
     }
 ];
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 10;
+let timeLeft = 60;
 let timerInterval;
 
 function startQuiz() {
@@ -148,3 +122,4 @@ function endQuiz() {
 }
 
 document.getElementById('start-button').addEventListener('click', startQuiz);
+//=========================================================
