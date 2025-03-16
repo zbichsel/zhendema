@@ -164,14 +164,9 @@ ul {
         background-color: var(--color-bg);
         color: var(--color-fg);
         font-size: 14px;
-        border: 1px solid var(--color-bg);
+        border: 1px solid var(--color-fg);
         border-radius: 2rem;
         cursor: pointer;
-    }
-
-    .answer-buttons:hover {
-        background-color: var(--color-fg);
-        color: var(--color-bg);
     }
 }
 
@@ -218,13 +213,9 @@ ul {
         background-color: var(--color-bg);
         color: var(--color-fg);
         font-size: 16px;
-        border: 1px solid var(--color-bg);
+        border: 1px solid var(--color-fg);
         border-radius: 2rem;
         cursor: pointer;
-    }
-    .answer-buttons:hover {
-        background-color: var(--color-fg);
-        color: var(--color-bg);
     }
 }
 
@@ -272,7 +263,7 @@ ul {
         background-color: var(--color-bg);
         color: var(--color-fg);
         font-size: 20px;
-        border: 1px solid var(--color-bg);
+        border: 1px solid var(--color-fg);
         border-radius: 2rem;
         cursor: pointer;
     }
@@ -280,6 +271,7 @@ ul {
         background-color: var(--color-fg);
         color: var(--color-bg);
     }
+}
 
 @media only screen and (min-width: 1280px) {
     h1 {
@@ -325,7 +317,7 @@ ul {
         background-color: var(--color-bg);
         color: var(--color-fg);
         font-size: 24px;
-        border: 1px solid var(--color-bg);
+        border: 1px solid var(--color-fg);
         border-radius: 2rem;
         cursor: pointer;
     }
