@@ -114,6 +114,11 @@ ul {
 }
 
 @media only screen and (min-width: 320px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
     h1 {
         padding: 4px;
         font-size: 4rem;
