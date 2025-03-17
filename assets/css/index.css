@@ -22,11 +22,7 @@ h1 {
 }
 
 .grid-container {
-    display: grid;
-    grid-gap: 10px;
-    margin: 0;
     padding: 10px;
-    list-style-type: none;
 }
 
 .grid-container>div,
@@ -34,8 +30,6 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px 0;
 }
 
 .item1,
@@ -80,13 +74,16 @@ ul {
 #answer-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
-    margin: 0 auto;
-    padding: 10px;
 }
 
 .answer-buttons {
-    font-size: 1rem;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    border: 1px solid var(--color-fg);
+    border-radius: 2rem;
+    cursor: pointer;
     padding: 10px;
 }
 
@@ -144,8 +141,8 @@ ul {
         align-items: center;
         margin: 0 auto;
         padding: 10px;
-        
     }
+
     #question-container {
         font-size: 24px;
         cursor: default;
@@ -156,17 +153,12 @@ ul {
     #answer-buttons {
         display: flex;
         flex-direction: column;
-        gap: 5px;;
+        gap: 5px;
         padding: 10px;
     }
 
     .answer-buttons {
-        background-color: var(--color-bg);
-        color: var(--color-fg);
         font-size: 14px;
-        border: 1px solid var(--color-fg);
-        border-radius: 2rem;
-        cursor: pointer;
     }
 }
 
@@ -177,17 +169,21 @@ ul {
         font-weight: 700;
         cursor: default;
     }
+
     .grid-container {
         display: flex;
         flex-direction: column;
         font-size: 1rem;
     }
-    .grid-container>div, ul {
+
+    .grid-container>div,
+    ul {
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 20px;
     }
+
     .quiz-container {
         display: flex;
         flex-direction: column;
@@ -195,27 +191,25 @@ ul {
         align-items: center;
         margin: 0 auto;
         padding: 10px;
-        
+
     }
+
     #question-container {
         font-size: 32px;
         cursor: default;
         width: 100%;
         margin: 0;
     }
+
     #answer-buttons {
         display: flex;
         flex-direction: row;
         gap: 10px;
         padding: 20px;
     }
+
     .answer-buttons {
-        background-color: var(--color-bg);
-        color: var(--color-fg);
         font-size: 16px;
-        border: 1px solid var(--color-fg);
-        border-radius: 2rem;
-        cursor: pointer;
     }
 }
 
@@ -226,6 +220,7 @@ ul {
         font-weight: 800;
         cursor: default;
     }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -233,12 +228,15 @@ ul {
         grid-gap: 10px;
         font-size: 1rem;
     }
-    .grid-container>div, ul {
+
+    .grid-container>div,
+    ul {
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 20px;
     }
+
     .quiz-container {
         display: flex;
         flex-direction: column;
@@ -247,26 +245,25 @@ ul {
         margin: 10px auto;
         padding: 10px;
     }
+
     #question-container {
         font-size: 40px;
         cursor: default;
         width: 100%;
         margin: 0;
     }
+
     #answer-buttons {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 10px;
     }
+
     .answer-buttons {
-        background-color: var(--color-bg);
-        color: var(--color-fg);
         font-size: 20px;
-        border: 1px solid var(--color-fg);
-        border-radius: 2rem;
-        cursor: pointer;
     }
+
     .answer-buttons:hover {
         background-color: var(--color-fg);
         color: var(--color-bg);
@@ -280,6 +277,7 @@ ul {
         font-weight: 900;
         cursor: default;
     }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -287,12 +285,15 @@ ul {
         grid-gap: 10px;
         font-size: 1rem;
     }
-    .grid-container>div, ul {
+
+    .grid-container>div,
+    ul {
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 20px;
     }
+
     .quiz-container {
         display: flex;
         flex-direction: column;
@@ -301,26 +302,25 @@ ul {
         margin: 20px auto;
         padding: 10px;
     }
+
     #question-container {
         font-size: 48px;
         cursor: default;
         width: 100%;
         margin: 0;
     }
+
     #answer-buttons {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 10px;
     }
+
     .answer-buttons {
-        background-color: var(--color-bg);
-        color: var(--color-fg);
         font-size: 24px;
-        border: 1px solid var(--color-fg);
-        border-radius: 2rem;
-        cursor: pointer;
     }
+
     .answer-buttons:hover {
         background-color: var(--color-fg);
         color: var(--color-bg);

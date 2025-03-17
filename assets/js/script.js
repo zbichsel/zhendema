@@ -48,7 +48,7 @@ const quizQuestions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 60;
+let timeLeft = 6000;
 let timerInterval;
 
 function startQuiz() {
