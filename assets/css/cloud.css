@@ -1,0 +1,112 @@
+.cloud {
+    position: absolute;
+    top: -15%;
+    left: -15%;
+    height: 20rem;
+    width: 20rem;
+    margin: 0;
+    padding: 0;
+    /* animation: slide-in 15s ease-in-out infinite alternate; */
+}
+
+.cloud2 {
+    position: absolute;
+    top: 0%;
+    left: -10%;
+    height: 30rem;
+    width: 30rem;
+    margin: 0;
+    padding: 0;
+    /* animation: slide-in 20s ease-in-out infinite alternate; */
+}
+
+.cloud3 {
+    position: absolute;
+    top: -10%;
+    left: 0%;
+    height: 25rem;
+    width: 25rem;
+    margin: 0;
+    padding: 0;
+    /* animation: slide-out 15s ease-in-out infinite alternate; */
+}
+
+.cloud4 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 35rem;
+    width: 35rem;
+    margin: 0;
+    padding: 0;
+    /* animation: slide-out 20s ease-in-out infinite alternate; */
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    .cloud {
+        height: 20rem;
+        width: 20rem;
+        top: -5%;
+        left: -20%;
+        animation: slide-in 15s ease-in-out infinite alternate;
+    }
+    .cloud2 {
+        height: 22rem;
+        width: 22rem;
+        top: -3%;
+        left: 85%;
+        animation: slide-out 15s ease-in-out infinite alternate;
+    }
+    .cloud3 {
+        height: 25rem;
+        width: 25rem;
+        top: -8%;
+        left: -15%;
+        animation: slide-in 15s ease-in-out infinite alternate;
+    }
+    .cloud4 {
+        height: 28rem;
+        width: 28rem;
+        top: -5%;
+        left: 90%;
+        animation: slide-out 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes slide-in {
+        from {
+            tranform: translateX(-10%);
+        }
+        to {
+            transform: translateX(400%);
+        }
+    }
+
+    @keyframes slide-out {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-320%);
+        }
+    }
+}
