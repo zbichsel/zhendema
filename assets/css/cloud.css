@@ -35,6 +35,42 @@
         animation: slide-in 4.5s ease-in forwards;
     }
 
+    h1 {
+        animation: shadow 7s ease-in-out forwards;
+    }
+
+    @keyframes shadow {
+        0% {
+            opacity: 100%;
+            text-shadow: red 1px 5px 5px;
+        }
+
+        15% {
+            opacity: 100%;
+            text-shadow: orange 1px 5px 5px;
+        }
+        30% {
+            opacity: 100%;
+            text-shadow: yellow 1px 5px 5px;
+        }
+        45% {
+            opacity: 100%;
+            text-shadow: green 1px 5px 5px;
+        }
+        60% {
+            opacity: 100%;
+            text-shadow: blue 1px 5px 5px;
+        }
+        75% {
+            opacity: 100%;
+            text-shadow: indigo 1px 5px 5px;
+        }
+        90% {
+            opacity: 100%;
+            text-shadow: violet 1px 5px 5px;
+        }
+    }
+
     @keyframes slide-in {
         from {
             left: -45%;
