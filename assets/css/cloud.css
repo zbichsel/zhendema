@@ -10,29 +10,29 @@
 
     .cloud2 {
         position: absolute;
-        width: 35%;
-        top: -75;
+        width: 50%;
+        top: -65px;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.2s ease-in forwards;
+        animation: slide-in 6s ease-in forwards;
     }
 
     .cloud3 {
         position: absolute;
-        width: 25%;
-        top: -85;
+        width: 41%;
+        top: 0px;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.4s ease-in forwards;
+        animation: slide-in 5.5s ease-in forwards;
     }
 
     .cloud4 {
         position: absolute;
         width: 45%;
-        top: -95;
+        top: -65px;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.6s ease-in forwards;
+        animation: slide-in 4.5s ease-in forwards;
     }
 
     @keyframes slide-in {
@@ -49,6 +49,42 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .cloud {
+        visibility: hidden;
+    }
+
+    .cloud2 {
+        visibility: hidden;
+    }
+
+    .cloud3 {
+        visibility: hidden;
+    }
+
+    .cloud4 {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .cloud {
+        visibility: hidden;
+    }
+
+    .cloud2 {
+        visibility: hidden;
+    }
+
+    .cloud3 {
+        visibility: hidden;
+    }
+
+    .cloud4 {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
     .cloud {
         visibility: hidden;
     }
