@@ -50,50 +50,18 @@
 
 @media only screen and (min-width: 768px) {
     .cloud {
-        position: absolute;
-        width: 60%;
-        top: -7rem;
-        margin: 0;
-        padding: 0;
-        animation: slide-in 5s ease-in forwards;
+        visibility: hidden;
     }
 
     .cloud2 {
-        position: absolute;
-        width: 54%;
-        top: -22rem;
-        margin: 0;
-        padding: 0;
-        animation: slide-in 5.6s ease-in forwards;
+        visibility: hidden;
     }
 
     .cloud3 {
-        position: absolute;
-        width: 49%;
-        top: -17rem;
-        margin: 0;
-        padding: 0;
-        animation: slide-in 4.1s ease-in forwards;
+        visibility: hidden;
     }
 
     .cloud4 {
-        position: absolute;
-        width: 35%;
-        top: -6rem;
-        margin: 0;
-        padding: 0;
-        animation: slide-in 5.04s ease-in forwards;
-    }
-
-    @keyframes slide-in {
-        from {
-            left: -45%;
-            opacity: 100%;
-        }
-
-        to {
-            left: 40%;
-            opacity: 0%;
-        }
+        visibility: hidden;
     }
 }
