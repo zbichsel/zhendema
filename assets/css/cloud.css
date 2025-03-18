@@ -5,7 +5,7 @@
         top: -100px;
         margin: 0;
         padding: 0;
-        animation: slide-in 5s ease-in infinite;
+        animation: slide-in 5s ease-in forwards;
     }
 
     .cloud2 {
@@ -14,7 +14,7 @@
         top: -75;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.2s ease-in infinite;
+        animation: slide-in 5.2s ease-in forwards;
     }
 
     .cloud3 {
@@ -23,7 +23,7 @@
         top: -85;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.4s ease-in infinite;
+        animation: slide-in 5.4s ease-in forwards;
     }
 
     .cloud4 {
@@ -32,7 +32,7 @@
         top: -95;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.6s ease-in infinite;
+        animation: slide-in 5.6s ease-in forwards;
     }
 
     @keyframes slide-in {
@@ -55,7 +55,7 @@
         top: -25rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 5s ease-in infinite;
+        animation: slide-in 5s ease-in forwards;
     }
 
     .cloud2 {
@@ -64,7 +64,7 @@
         top: -22rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.06s ease-in infinite;
+        animation: slide-in 5.06s ease-in forwards;
     }
 
     .cloud3 {
@@ -73,7 +73,7 @@
         top: -20rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.1s ease-in infinite;
+        animation: slide-in 5.1s ease-in forwards;
     }
 
     .cloud4 {
@@ -82,7 +82,7 @@
         top: -18rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.04s ease-in infinite;
+        animation: slide-in 5.04s ease-in forwards;
     }
 
     @keyframes slide-in {
