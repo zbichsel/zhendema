@@ -15,6 +15,10 @@ body {
     overflow-x: hidden;
 }
 
+section {
+    overflow-x: hidden;
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -115,6 +119,10 @@ ul {
 
 @media only screen and (min-width: 320px) {
 
+    body {
+        overflow-x: hidden;
+    }
+
     h1 {
         padding: 4px;
         font-size: 4rem;
@@ -165,6 +173,11 @@ ul {
 }
 
 @media only screen and (min-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
     h1 {
         padding: 2px;
         font-size: 6rem;
@@ -216,6 +229,11 @@ ul {
 }
 
 @media only screen and (min-width: 1024px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
     h1 {
         padding: 2px;
         font-size: 8rem;
@@ -273,6 +291,11 @@ ul {
 }
 
 @media only screen and (min-width: 1280px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
     h1 {
         padding: 2px;
         font-size: 10rem;
