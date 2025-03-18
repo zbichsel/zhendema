@@ -51,8 +51,8 @@
 @media only screen and (min-width: 768px) {
     .cloud {
         position: absolute;
-        width: 50%;
-        top: -25rem;
+        width: 60%;
+        top: -7rem;
         margin: 0;
         padding: 0;
         animation: slide-in 5s ease-in forwards;
@@ -60,26 +60,26 @@
 
     .cloud2 {
         position: absolute;
-        width: 44%;
+        width: 54%;
         top: -22rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.06s ease-in forwards;
+        animation: slide-in 5.6s ease-in forwards;
     }
 
     .cloud3 {
         position: absolute;
-        width: 41%;
-        top: -20rem;
+        width: 49%;
+        top: -17rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 5.1s ease-in forwards;
+        animation: slide-in 4.1s ease-in forwards;
     }
 
     .cloud4 {
         position: absolute;
-        width: 45%;
-        top: -18rem;
+        width: 35%;
+        top: -6rem;
         margin: 0;
         padding: 0;
         animation: slide-in 5.04s ease-in forwards;
@@ -92,7 +92,7 @@
         }
 
         to {
-            left: 100%;
+            left: 40%;
             opacity: 0%;
         }
     }
