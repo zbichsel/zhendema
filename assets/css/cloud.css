@@ -1,61 +1,49 @@
 @media only screen and (min-width: 320px) {
     .cloud {
         position: absolute;
-        width: 100vw;
-        top: -45%;
-        left: -10%;
+        width: 50%;
+        top: -100px;
         margin: 0;
         padding: 0;
-        animation: slide-in 3s linear forwards;
+        animation: slide-in 5s ease-in infinite;
     }
 
     .cloud2 {
         position: absolute;
-        width: 100vw;
-        top: -35%;
-        left: -10%;
+        width: 35%;
+        top: -75;
         margin: 0;
         padding: 0;
-        animation: slide-out 3.2s linear forwards;
+        animation: slide-in 5.2s ease-in infinite;
     }
 
     .cloud3 {
         position: absolute;
-        width: 100vw;
-        top: -20%;
-        left: -10%;
+        width: 25%;
+        top: -85;
         margin: 0;
         padding: 0;
-        animation: slide-in 3.4s linear forwards;
+        animation: slide-in 5.4s ease-in infinite;
     }
 
     .cloud4 {
         position: absolute;
-        width: 100vw;
-        top: 0%;
-        left: -10%;
+        width: 45%;
+        top: -95;
         margin: 0;
         padding: 0;
-        animation: slide-out 3.6s linear forwards;
+        animation: slide-in 5.6s ease-in infinite;
     }
 
     @keyframes slide-in {
         from {
-            transform: translateX(-100%);
+            left: -45%;
+            opacity: 100%;
         }
 
         to {
-            transform: translateX(100%);
-        }
-    }
-
-    @keyframes slide-out {
-        from {
-            transform: translateX(100%)
-        }
-
-        to {
-            transform: translateX(-100%)
+            left: 50%;
+            opacity: 0%;
         }
     }
 }
@@ -63,59 +51,49 @@
 @media only screen and (min-width: 768px) {
     .cloud {
         position: absolute;
-        width: 100vw;
-        top: -95%;
-        left: -10%;
+        width: 50%;
+        top: -25rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 3s linear forwards;
+        animation: slide-in 5s ease-in infinite;
     }
 
     .cloud2 {
         position: absolute;
-        width: 100vw;
-        top: -75%;
-        left: -10%;
+        width: 44%;
+        top: -22rem;
         margin: 0;
         padding: 0;
-        animation: slide-out 3.2s linear forwards;
+        animation: slide-in 5.06s ease-in infinite;
     }
 
     .cloud3 {
         position: absolute;
-        width: 100vw;
-        top: -85%;
-        left: -10%;
+        width: 41%;
+        top: -20rem;
         margin: 0;
         padding: 0;
-        animation: slide-in 3.4s linear forwards;
+        animation: slide-in 5.1s ease-in infinite;
     }
 
     .cloud4 {
         position: absolute;
-        width: 100vw;
-        top: -105%;
-        left: -10%;
+        width: 45%;
+        top: -18rem;
         margin: 0;
         padding: 0;
-        animation: slide-out 3.6s linear forwards;
+        animation: slide-in 5.04s ease-in infinite;
     }
+
     @keyframes slide-in {
         from {
-            transform: translateX(-100%);
+            left: -45%;
+            opacity: 100%;
         }
 
         to {
-            transform: translateX(100%);
-        }
-    }
-    @keyframes slide-out {
-        from {
-            transform: translateX(100%)
-        }
-
-        to {
-            transform: translateX(-100%)
+            left: 100%;
+            opacity: 0%;
         }
     }
 }
