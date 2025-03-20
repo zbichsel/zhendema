@@ -15,37 +15,46 @@
 </head>
 
 <body>
-        <section>
-            <img src="./assets/images/cloud.svg" alt="cloud" class="cloud">
-            <div id="boltbox">
-                <svg id="bolts">
-                    <path id="bolt1" d="M120 0 L80 240 L120 210 L80 450 L150 170 L125 180 L160 0 Z" fill="yellow" />
-                </svg>
+    <section>
+        <img src="./assets/images/cloud.svg" alt="cloud" class="cloud">
+        <div id="boltbox">
+            <svg id="bolts">
+                <path id="bolt1" d="M120 0 L80 240 L120 210 L80 450 L150 170 L125 180 L160 0 Z" fill="yellow" />
+            </svg>
+        </div>
+        <h1>真的吗</h1>
+        <div class="grid-container" id="grid-container">
+            <div class="item1">你想学中文还是英语？<br />Do you want to learn Chinese or English?
             </div>
-            <h1>真的吗</h1>
-            <div class="grid-container" id="grid-container">
-                <div class="item1">你想学中文还是英语？<br />Do you want to learn Chinese or English?
-                </div>
-                <div class="item2">明天下午我们会做火车去北京。<br />Tomorrow afternoon, we'll take the train to Beijing.</div>
-                <div class="item3">你喜欢去韩文书店吗？<br />Do you like going to the Korean bookstore?</div>
-                <div class="item4">我的床很大和舒服。<br />My bed is large and comfortable.</div>
-                <div class="item5">我们去咖啡馆喝一杯咖啡吧！<br />Let's go to the cafe for a cup of coffee!</div>
-                <div class="item6">今天你们去图书馆看书吗？<br />Are you going to the library to read a book this afternoon?</div>
-                <div class="item7">我们都有三名新同学，对不对？<br />We, both, have three new classmates, right?</div>
+            <div class="item2">明天下午我们会做火车去北京。<br />Tomorrow afternoon, we'll take the train to Beijing.</div>
+            <div class="item3">你喜欢去韩文书店吗？<br />Do you like going to the Korean bookstore?</div>
+            <div class="item4">我的床很大和舒服。<br />My bed is large and comfortable.</div>
+            <div class="item5">我们去咖啡馆喝一杯咖啡吧！<br />Let's go to the cafe for a cup of coffee!</div>
+            <div class="item6">今天你们去图书馆看书吗？<br />Are you going to the library to read a book this afternoon?</div>
+            <div class="item7">我们都有三名新同学，对不对？<br />We, both, have three new classmates, right?</div>
+        </div>
+        <div class="quiz-container">
+            <div id="question-container">
+                <p id="question-text"></p>
+                <div id="answer-buttons"></div>
             </div>
-            <div class="quiz-container">
-                <div id="question-container">
-                    <p id="question-text"></p>
-                    <div id="answer-buttons"></div>
-                </div>
-                <div id="controls-container">
-                    <button id="start-button">Start Quiz</button>
-                    <div hidden id="timer-container">
-                        <span id="timer-text">Time Left: <span id="timer">0</span></span>
-                    </div>
+            <div id="controls-container">
+                <button id="start-button">Start</button>
+                <button id="new-start-button">Start</button>
+                <div hidden id="timer-container">
+                    <span id="timer-text">Time Left: <span id="timer">0</span></span>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- TESTING  -->
+        <div class="newContainer">
+            <p id="test-question-text"></p>
+            <div id="input-container"></div>
+            <button style="display: none;" id="checkButton">Submit</button>
+            <p id="result"></p>
+        </div>
+        <!-- TESTING  -->
+    </section>
     <script src="assets/js/script.js"></script>
 </body>
 
