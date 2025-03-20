@@ -76,7 +76,7 @@ function createQuizStructure() {
     // Create the timer container (initially hidden)
     const timerContainer = document.createElement('div');
     timerContainer.id = 'timer-container';
-    timerContainer.hidden = true;  // Hide initially
+    timerContainer.hidden = false;  // Hide initially
 
     // Create the timer text
     const timerText = document.createElement('span');
@@ -86,7 +86,7 @@ function createQuizStructure() {
     // Create the timer span
     const timer = document.createElement('span');
     timer.id = 'timer';
-    timer.textContent = '0';  // Initial value of the timer
+    timer.textContent = '60';  // Initial value of the timer
 
     // Append the timer elements
     timerText.appendChild(timer);
@@ -254,14 +254,12 @@ const quizQuestionsTwo = [
 
 let newQuestionIndexTwo = 0;
 let newScoreTwo = 0;
-let newTimeLeftTwo = 120;
 let newTimerIntervalTwo;
 
 function startNewQuizTwo() {
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('new-start-button').style.display = 'none';
     document.getElementById('grid-container').style.display = 'none';
-    startNewTimerTwo();
 
     // Create the quiz container dynamically
     createQuizContainer();
@@ -355,18 +353,6 @@ function checkAnswerTwo(userInput) {
         } else {
             document.getElementById("result").textContent = "Quiz Finished!";
             document.getElementById("test-question-text").innerHTML = '';
-            endQuizTwo();
-        }
-    }, 1000);
-}
-
-function startNewTimerTwo() {
-    newTimerIntervalTwo = setInterval(function () {
-        newTimeLeftTwo--;
-
-        document.getElementById("timer").textContent = newTimeLeftTwo;
-
-        if (newTimeLeftTwo <= 0) {
             endQuizTwo();
         }
     }, 1000);
