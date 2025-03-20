@@ -13,7 +13,9 @@ if (prefersDarkScheme.matches) {
 
 // THIS IS THE QUIZ CODE
 //=======================
-const quizQuestions = [
+// THIS IS THE QUIZ CODE
+//=======================
+const quizQuestionsOne = [
     {
         question: "你喜欢吃韩国菜？",
         options: ["What time is it?", "Do you like Korean food?", "Where is the library?", "What time should we go to the supermarket?"],
@@ -46,20 +48,21 @@ const quizQuestions = [
     }
 ];
 
-let currentQuestionIndex = 0;
-let score = 0;
-let timeLeft = 60;
-let timerInterval;
+let currentQuestionIndexOne = 0;
+let scoreOne = 0;
+let timeLeftOne = 60;
+let timerIntervalOne;
 
-function startQuiz() {
+function startQuizOne() {
     document.getElementById('start-button').style.display = 'none';
+    document.getElementById('new-start-button').style.display = 'none';
     document.getElementById('grid-container').style.display = 'none';
-    displayQuestion();
-    startTimer();
+    displayQuestionOne();
+    startTimerOne();
 }
 
-function displayQuestion() {
-    const currentQuestion = quizQuestions[currentQuestionIndex];
+function displayQuestionOne() {
+    const currentQuestion = quizQuestionsOne[currentQuestionIndexOne];
     const questionText = document.getElementById("question-text");
     const answerButtons = document.getElementById("answer-buttons");
 
@@ -75,51 +78,177 @@ function displayQuestion() {
         answerButtons.appendChild(button);
 
         button.addEventListener("click", function () {
-            checkAnswer(option);
+            checkAnswerOne(option);
         });
     });
 }
 
-function checkAnswer(selectedOption) {
-    const currentQuestion = quizQuestions[currentQuestionIndex];
+function checkAnswerOne(selectedOption) {
+    const currentQuestion = quizQuestionsOne[currentQuestionIndexOne];
 
     if (selectedOption === currentQuestion.correctAnswer) {
-        score++;
+        scoreOne++;
     }
 
-    currentQuestionIndex++;
+    currentQuestionIndexOne++;
 
-    if (currentQuestionIndex < quizQuestions.length) {
-        displayQuestion();
+    if (currentQuestionIndexOne < quizQuestionsOne.length) {
+        displayQuestionOne();
     } else {
-        endQuiz();
+        endQuizOne();
     }
 }
 
-function startTimer() {
-    timerInterval = setInterval(function () {
-        timeLeft--;
+function startTimerOne() {
+    timerIntervalOne = setInterval(function () {
+        timeLeftOne--;
 
-        document.getElementById("timer").textContent = timeLeft;
+        document.getElementById("timer").textContent = timeLeftOne;
 
-        if (timeLeft <= 0) {
-            endQuiz();
+        if (timeLeftOne <= 0) {
+            endQuizOne();
         }
     }, 1000);
 }
 
-function endQuiz() {
-    clearInterval(timerInterval);
+function endQuizOne() {
+    clearInterval(timerIntervalOne);
 
-    const scorePercentage = Math.round((score / quizQuestions.length) * 100);
+    const scorePercentage = Math.round((scoreOne / quizQuestionsOne.length) * 100);
 
     const questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = `
         <h2>Quiz beendet!</h2>
-        <p>Dein Ergebnis: ${score} von ${quizQuestions.length}</p>
+        <p>Dein Ergebnis: ${scoreOne} von ${quizQuestionsOne.length}</p>
         <p>Score Percentage: ${scorePercentage}%</p>
     `;
 }
 
-document.getElementById('start-button').addEventListener('click', startQuiz);
+document.getElementById('start-button').addEventListener('click', startQuizOne);
 //=========================================================
+
+//=========================================================
+// THIS IS THE SECOND QUIZ CODE
+// WORK IN PROGRESS
+const quizQuestionsTwo = [
+    {
+        question: "你喜欢吃韩国菜？",
+        correctAnswer: "Do you like to eat Korean food?"
+    },
+    {
+        question: "明天下午他们会做飞机去美国，对不对？",
+        correctAnswer: "Tomorrow afternoon they will fly to the USA, right?"
+    },
+    {
+        question: "我也有一节新中文课。",
+        correctAnswer: "I also have a new Chinese class."
+    },
+    {
+        question: "你喜欢茶还是咖啡？",
+        correctAnswer: "Do you like tea or coffee?"
+    },
+    {
+        question: "明天我们去图书馆吧！",
+        correctAnswer: "Let's go to the library tomorrow!"
+    },
+    {
+        question: "我女儿的床很漂亮。",
+        correctAnswer: "My daughter's bed is very beautiful."
+    }
+];
+
+let newQuestionIndexTwo = 0;
+let newScoreTwo = 0;
+let newTimeLeftTwo = 60;
+let newTimerIntervalTwo;
+
+function startNewQuizTwo() {
+    document.getElementById('start-button').style.display = 'none';
+    document.getElementById('new-start-button').style.display = 'none';
+    document.getElementById('grid-container').style.display = 'none';
+    startNewTimerTwo();
+
+    displayQuestionsTwo();
+}
+
+function displayQuestionsTwo() {
+    const currentQuestion = quizQuestionsTwo[newQuestionIndexTwo];
+    const questionText = document.getElementById("test-question-text");
+    const inputContainer = document.getElementById("input-container");
+
+    document.getElementById('checkButton').style.display = 'block';
+
+    questionText.innerHTML = "";
+    inputContainer.innerHTML = "";
+
+    questionText.innerHTML = currentQuestion.question;
+
+    const inputAnswer = document.createElement("input");
+    inputAnswer.type = "text";
+    inputAnswer.id = "userAnswer";
+    inputAnswer.classList.add("input-answer");
+    inputAnswer.placeholder = "Type your answer here...";
+
+    inputContainer.appendChild(inputAnswer);
+
+    document.getElementById("result").textContent = "";
+
+    const checkButton = document.getElementById("checkButton");
+    checkButton.onclick = function () {
+        checkAnswerTwo(inputAnswer.value);
+    };
+}
+
+function checkAnswerTwo(userInput) {
+    const currentQuestion = quizQuestionsTwo[newQuestionIndexTwo];
+    const correctAnswer = currentQuestion.correctAnswer;
+
+    if (userInput.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+        document.getElementById("result").textContent = "Correct!";
+        document.getElementById("result").style.color = "white";
+        newScoreTwo++;
+    } else {
+        document.getElementById("result").textContent = "Incorrect, try again!";
+        document.getElementById("result").style.color = "red";
+    }
+
+    document.getElementById("userAnswer").value = '';
+
+    setTimeout(function () {
+        newQuestionIndexTwo++;
+        if (newQuestionIndexTwo < quizQuestionsTwo.length) {
+            displayQuestionsTwo();
+        } else {
+            document.getElementById("result").textContent = "Quiz Finished!";
+            document.getElementById("test-question-text").innerHTML = '';
+            endQuizTwo();
+        }
+    }, 1000);
+}
+
+function startNewTimerTwo() {
+    newTimerIntervalTwo = setInterval(function () {
+        newTimeLeftTwo--;
+
+        document.getElementById("timer").textContent = newTimeLeftTwo;
+
+        if (newTimeLeftTwo <= 0) {
+            endQuizTwo();
+        }
+    }, 1000);
+}
+
+function endQuizTwo() {
+    clearInterval(newTimerIntervalTwo);
+
+    const scorePercentage = Math.round((newScoreTwo / quizQuestionsTwo.length) * 100);
+
+    const questionContainer = document.querySelector(".newContainer");
+    questionContainer.innerHTML = `
+        <h2>Quiz beendet!</h2>
+        <p>Dein Ergebnis: ${newScoreTwo} von ${quizQuestionsTwo.length}</p>
+        <p>Score Percentage: ${scorePercentage}%</p>
+    `;
+}
+
+document.getElementById('new-start-button').addEventListener('click', startNewQuizTwo);
