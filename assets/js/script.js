@@ -49,60 +49,46 @@ let timeLeftOne = 60;
 let timerIntervalOne;
 
 function createQuizStructure() {
-    // Create the main quiz container
     const quizContainer = document.createElement('div');
     quizContainer.classList.add('quiz-container');
 
-    // Create the question container
     const questionContainer = document.createElement('div');
     questionContainer.id = 'question-container';
 
-    // Create the question text paragraph
     const questionText = document.createElement('p');
     questionText.id = 'question-text';
 
-    // Create the answer buttons container
     const answerButtons = document.createElement('div');
     answerButtons.id = 'answer-buttons';
 
-    // Append question text and answer buttons to the question container
     questionContainer.appendChild(questionText);
     questionContainer.appendChild(answerButtons);
 
-    // Create the controls container
     const controlsContainer = document.createElement('div');
     controlsContainer.id = 'controls-container';
 
-    // Create the timer container (initially hidden)
     const timerContainer = document.createElement('div');
     timerContainer.id = 'timer-container';
-    timerContainer.hidden = false;  // Hide initially
+    timerContainer.hidden = false;
 
-    // Create the timer text
     const timerText = document.createElement('span');
     timerText.id = 'timer-text';
     timerText.textContent = 'Time Left: ';
 
-    // Create the timer span
     const timer = document.createElement('span');
     timer.id = 'timer';
-    timer.textContent = '60';  // Initial value of the timer
+    timer.textContent = '60';
 
-    // Append the timer elements
     timerText.appendChild(timer);
     timerContainer.appendChild(timerText);
 
-    // Append the timer container to the controls container
     controlsContainer.appendChild(timerContainer);
 
-    // Append the question container and controls container to the quiz container
     quizContainer.appendChild(questionContainer);
     quizContainer.appendChild(controlsContainer);
 
-    // Append the entire quiz container to the body or a parent container
     document.body.appendChild(quizContainer);
 }
-
 
 function startQuizOne() {
     document.getElementById('start-button').style.display = 'none';
@@ -114,12 +100,12 @@ function startQuizOne() {
 }
 
 function startTimerOne() {
-    timerInterval = setInterval(function () {
-        timeLeft--;
-        document.getElementById('timer').textContent = timeLeft;
+    timerIntervalOne = setInterval(function () {
+        timeLeftOne--;
+        document.getElementById('timer').textContent = timeLeftOne;
 
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
+        if (timeLeftOne <= 0) {
+            clearInterval(timerIntervalOne);
             endQuizOne();
         }
     }, 1000);
@@ -130,82 +116,38 @@ function displayQuestionOne() {
     const questionText = document.getElementById("question-text");
     const answerButtons = document.getElementById("answer-buttons");
 
-    // Clear previous content
-    questionText.innerHTML = "";
+    questionText.innerHTML = currentQuestion.question;
     answerButtons.innerHTML = "";
 
-    // Display the current question
-    questionText.innerHTML = currentQuestion.question;
-
-    // Create answer buttons dynamically
     currentQuestion.options.forEach(option => {
         const button = document.createElement("button");
         button.innerText = option;
         button.classList.add("answer-buttons");
         answerButtons.appendChild(button);
 
-        // Add click event listener for checking the answer
         button.addEventListener("click", function () {
-            checkAnswerOne(option);
+            checkAnswerOne(option, button);
         });
     });
 }
 
-function checkAnswerOne(selectedOption) {
-    const currentQuestion = quizQuestionsOne[currentQuestionIndexOne];
-
-    if (selectedOption === currentQuestion.correctAnswer) {
-        score++;
-    }
-
-    // Move to the next question or end the quiz if it's the last question
-    currentQuestionIndexOne++;
-
-    if (currentQuestionIndexOne < quizQuestionsOne.length) {
-        displayQuestionOne();  // Display the next question
-    } else {
-        endQuizOne();
-    }
-}
-
-function endQuizOne() {
-    // Clear the timer
-    clearInterval(timerInterval);
-
-    // Display the final score
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = `<h2>Quiz Finished!</h2><p>Your score: ${score} out of ${quizQuestionsOne.length}</p>`;
-}
-
-document.getElementById('start-button').addEventListener('click', startQuizOne);
-
-
-function checkAnswerOne(selectedOption) {
+function checkAnswerOne(selectedOption, buttonElement) {
     const currentQuestion = quizQuestionsOne[currentQuestionIndexOne];
 
     if (selectedOption === currentQuestion.correctAnswer) {
         scoreOne++;
+        buttonElement.style.border = "2px solid green"; // Highlight correct answer
+    } else {
+        buttonElement.style.border = "2px solid red"; // Highlight incorrect answer
     }
 
     currentQuestionIndexOne++;
 
     if (currentQuestionIndexOne < quizQuestionsOne.length) {
-        displayQuestionOne();
+        setTimeout(displayQuestionOne, 1000);  // Delay before showing the next question
     } else {
         endQuizOne();
     }
-}
-
-function startTimerOne() {
-    timerIntervalOne = setInterval(function () {
-        timeLeftOne--;
-
-        document.getElementById("timer").textContent = timeLeftOne;
-
-        if (timeLeftOne <= 0) {
-            endQuizOne();
-        }
-    }, 1000);
 }
 
 function endQuizOne() {
@@ -215,13 +157,14 @@ function endQuizOne() {
 
     const questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = `
-        <h2>Quiz beendet!</h2>
-        <p>Dein Ergebnis: ${scoreOne} von ${quizQuestionsOne.length}</p>
+        <h2>Quiz Finished!</h2>
+        <p>Your score: ${scoreOne} out of ${quizQuestionsOne.length}</p>
         <p>Score Percentage: ${scorePercentage}%</p>
     `;
 }
 
 document.getElementById('start-button').addEventListener('click', startQuizOne);
+
 //=========================================================
 // THIS IS THE SECOND QUIZ CODE
 // WORK IN PROGRESS
