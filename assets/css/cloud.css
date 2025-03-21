@@ -1,70 +1,12 @@
 @media only screen and (min-width: 320px) {
-    .cloud {
-        position: absolute;
-        width: 80%;
-        top: -100px;
-        margin: 0;
-        padding: 0;
-        animation: slide-in 3s ease-in-out forwards;
-        z-index: 11;
-    }
-
     h1 {
-        animation: shadow 3s ease-in-out forwards;
-        animation-delay: 3.1s;
-    }
-
-    /* Set the position and z-index for the bolts */
-    #bolts {
-        position: absolute;
-        z-index: 10;
-        top: 5rem;
-        left: 6rem;
-        height: 60%;
-        opacity: 0%;
-        animation: bolt 1s ease-in-out forwards;
-        animation-delay: 0.5s;
-    }
-
-    body,
-    h1,
-    .grid-container,
-    .quiz-container {
-        position: relative;
-        z-index: 0;
-    }
-
-    @keyframes bolt {
-        0% {
-            opacity: 0%;
-        }
-
-        25% {
-            opacity: 100%;
-            stroke: none;
-        }
-
-        50% {
-            opacity: 100%;
-            stroke: black;
-            stroke-width: 10px;
-        }
-
-        75% {
-            opacity: 100%;
-            stroke: none;
-        }
-
-        100% {
-            opacity: 0%;
-            visibility: hidden;
-        }
+        animation: shadow 5s infinite alternate;
     }
 
     @keyframes shadow {
         0% {
             opacity: 100%;
-            text-shadow: red 0px 1px 10px;
+            text-shadow: red 0px 1px 100px;
         }
 
         15% {
@@ -74,7 +16,7 @@
 
         30% {
             opacity: 100%;
-            text-shadow: yellow 0px 1px 10px;
+            text-shadow: yellow 0px 1px 100px;
         }
 
         45% {
@@ -84,7 +26,7 @@
 
         60% {
             opacity: 100%;
-            text-shadow: blue 0px 1px 10px;
+            text-shadow: blue 0px 1px 100px;
         }
 
         75% {
@@ -94,70 +36,7 @@
 
         90% {
             opacity: 100%;
-            text-shadow: violet 0px 1px 10px;
+            text-shadow: violet 0px 1px 100px;
         }
-    }
-
-    @keyframes slide-in {
-        0% {
-            top: -16%;
-            left: 14%;
-            opacity: 100%;
-        }
-
-        50% {
-            top: -16%;
-            left: 14%;
-            opacity: 100%;
-        }
-
-        100% {
-            top: -16%;
-            left: 14%;
-            opacity: 0%;
-            visibility: hidden;
-        }
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .cloud {
-        visibility: hidden;
-    }
-
-    #bolts {
-        visibility: hidden;
-    }
-
-    h1 {
-        animation: shadow 3s ease-in-out forwards;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .cloud {
-        visibility: hidden;
-    }
-
-    #bolts {
-        visibility: hidden;
-    }
-
-    h1 {
-        animation: shadow 3s ease-in-out forwards;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    .cloud {
-        visibility: hidden;
-    }
-
-    #bolts {
-        visibility: hidden;
-    }
-
-    h1 {
-        animation: shadow 3s ease-in-out forwards;
     }
 }
