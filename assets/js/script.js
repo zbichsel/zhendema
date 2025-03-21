@@ -13,8 +13,8 @@ if (prefersDarkScheme.matches) {
 const quizQuestionsOne = [
     {
         question: "你喜欢吃韩国菜？",
-        options: ["What time is it?", "Do you like Korean food?", "Where is the library?", "What time should we go to the supermarket?"],
-        correctAnswer: "Do you like Korean food?"
+        options: ["What time is it?", "Do you like to eat Korean food?", "Where is the library?", "What time should we go to the supermarket?"],
+        correctAnswer: "Do you like to eat Korean food?"
     },
     {
         question: "明天下午他们会做飞机去美国，对不对？",
@@ -268,6 +268,11 @@ function displayQuestionsTwo() {
     checkButton.onclick = function () {
         checkAnswerTwo(inputAnswer.value);
     };
+    inputAnswer.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            checkAnswerTwo(inputAnswer.value);
+        }
+    });
 }
 
 
