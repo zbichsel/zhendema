@@ -93,7 +93,6 @@ function createQuizStructure() {
 function startQuizOne() {
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('new-start-button').style.display = 'none';
-    document.getElementById('grid-container').style.display = 'none';
     createQuizStructure();
     displayQuestionOne();
     startTimerOne();
@@ -202,7 +201,6 @@ let newTimerIntervalTwo;
 function startNewQuizTwo() {
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('new-start-button').style.display = 'none';
-    document.getElementById('grid-container').style.display = 'none';
 
     // Create the quiz container dynamically
     createQuizContainer();
