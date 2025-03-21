@@ -1,42 +1,19 @@
 @media only screen and (min-width: 320px) {
     h1 {
-        animation: shadow 5s infinite alternate;
+        animation: shadow 3s infinite alternate;
     }
 
     @keyframes shadow {
-        0% {
-            opacity: 100%;
-            text-shadow: red 0px 1px 100px;
+        0% { text-shadow: 0rem 0rem 1rem red, 0rem 0rem 2rem, 0rem 0rem 3rem yellow;
         }
-
-        15% {
-            opacity: 100%;
-            text-shadow: orange 0px 1px 10px;
+        20% { text-shadow: 0rem 0rem 1rem orange, 0rem 0rem 2rem yellow, 0rem 0rem 3rem green;
         }
-
-        30% {
-            opacity: 100%;
-            text-shadow: yellow 0px 1px 100px;
+        40% { text-shadow: 0rem 0rem 1rem yellow, 0rem 0rem 2rem green, 0rem 0rem 3rem blue;
         }
-
-        45% {
-            opacity: 100%;
-            text-shadow: green 0px 1px 10px;
+        60% { text-shadow: 0rem 0rem 1rem green, 0rem 0rem 2rem blue, 0rem 0rem 3rem indigo;
         }
-
-        60% {
-            opacity: 100%;
-            text-shadow: blue 0px 1px 100px;
+        80% { text-shadow: 0rem 0rem 1rem blue, 0rem 0rem 2rem indigo, 0rem 0rem 3rem violet;
         }
-
-        75% {
-            opacity: 100%;
-            text-shadow: indigo 0px 1px 10px;
-        }
-
-        90% {
-            opacity: 100%;
-            text-shadow: violet 0px 1px 100px;
-        }
+        100% { text-shadow: 0rem 0rem 1rem violet, 0rem 0rem 2rem red, 0rem 0rem 3rem orange}
     }
 }
