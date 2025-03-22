@@ -161,11 +161,17 @@ input {
         color: var(--color-bg);
         background-color: var(--color-fg);
     }
+    #bg-animation2 {
+        background-color: var(--color-fg);
+    }
 }
 
 @media (prefers-color-scheme: light) {
     body {
         color: var(--color-fg);
+        background-color: var(--color-bg);
+    }
+    #bg-animation2 {
         background-color: var(--color-bg);
     }
 }
