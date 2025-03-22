@@ -3,12 +3,14 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 85%;
         width: 100vw;
         overflow: hidden;
         box-sizing: border-box;
+        border-bottom-right-radius: 30px;
+        box-shadow: inset 0 0 10px var(--color-bg);
         background-color: var(--color-fg);
-        animation: expose 2s linear forwards;
+        animation: expose 2.1s linear forwards;
         animation-delay: 1.5s;
     }
 
@@ -19,7 +21,7 @@
         box-sizing: border-box;
         grid-template-columns: 1fr 1fr 1fr;
         grid-auto-rows: 200px;
-        height: 100%;
+        height: 85%;
         grid-gap: 10px;
         margin: 0;
         padding: 10px;
@@ -29,7 +31,8 @@
     }
 
     .wrapper>div {
-        border: 2px solid var(--color-bg);
+        border-radius: 30px;
+        box-shadow: inset 0 0 10px var(--color-bg);
         color: var(--color-bg);
         justify-content: center;
         align-items: center;
@@ -37,19 +40,20 @@
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
-        height: 200px;
-        width: 120px;
+        height: 180px;
+        width: 110px;
         animation: exposeDiv 2s linear forwards;
-        animation-delay: 1.5s;
+        animation-delay: 1.48s;
     }
 
     #bg-animation2 {
         position: absolute;
         top: 0;
         right: 0;
-        height: 100%;
+        height: 85%;
         width: 100vw;
-        overflow: hidden;
+        border-top-left-radius: 30px;
+        box-shadow: inset 0 0 10px var(--color-fg);
         box-sizing: border-box;
         background-color: var(--color-bg);
         animation: swish 1s linear forwards;
@@ -142,150 +146,6 @@
         }
     }
 }
-
-@media only screen and (min-width: 428px) {
-    #bg-animation {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100vw;
-        box-sizing: border-box;
-        background-color: var(--color-fg);
-        animation: expose 2s linear forwards;
-        animation-delay: 1.5s;
-    }
-
-    .wrapper {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-rows: 200px;
-        height: 100%;
-        grid-gap: 10px;
-        margin: 0;
-        padding: 10px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .wrapper>div {
-        border: 2px solid var(--color-bg);
-        color: var(--color-bg);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        height: 200px;
-        width: 120px;
-        animation: exposeDiv 2s linear forwards;
-        animation-delay: 1.5s;
-    }
-
-    #bg-animation2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 100vw;
-        box-sizing: border-box;
-        background-color: var(--color-bg);
-        animation: swish 1s linear forwards;
-    }
-
-    h1 {
-        animation: shadow 3s infinite alternate;
-        animation-delay: 2.15s;
-    }
-
-
-    @keyframes expose {
-        0% {
-            width: 100vw;
-        }
-
-        25% {
-            width: 75vw;
-        }
-
-        50% {
-            width: 50vw;
-        }
-
-        75% {
-            width: 25vw;
-        }
-
-        100% {
-            width: 0vw;
-            visibility: hidden;
-        }
-    }
-
-    @keyframes exposeDiv {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-350%);
-        }
-    }
-
-    @keyframes swish {
-        0% {
-            width: 100vw;
-        }
-
-        25% {
-            width: 75vw;
-        }
-
-        50% {
-            width: 50vw;
-        }
-
-        75% {
-            width: 25vw;
-        }
-
-        100% {
-            width: 0vw;
-            visibility: hidden;
-        }
-    }
-
-    @keyframes shadow {
-        0% {
-            text-shadow: 0rem 0rem 1rem red, 0rem 0rem 2rem orange, 0rem 0rem 3rem yellow;
-        }
-
-        20% {
-            text-shadow: 0rem 0rem 1rem orange, 0rem 0rem 2rem yellow, 0rem 0rem 3rem green;
-        }
-
-        40% {
-            text-shadow: 0rem 0rem 1rem yellow, 0rem 0rem 2rem green, 0rem 0rem 3rem blue;
-        }
-
-        60% {
-            text-shadow: 0rem 0rem 1rem green, 0rem 0rem 2rem blue, 0rem 0rem 3rem indigo;
-        }
-
-        80% {
-            text-shadow: 0rem 0rem 1rem blue, 0rem 0rem 2rem indigo, 0rem 0rem 3rem violet;
-        }
-
-        100% {
-            text-shadow: 0rem 0rem 1rem violet, 0rem 0rem 2rem red, 0rem 0rem 3rem orange;
-        }
-    }
-}
-
 @media only screen and (min-width: 768px) {
     .wrapper, .wrapper>div, #bg-animation, #bg-animation2 {
         display: none;
