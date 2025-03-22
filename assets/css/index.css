@@ -163,6 +163,13 @@ input {
     }
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        color: var(--color-fg);
+        background-color: var(--color-bg);
+    }
+}
+
 @media only screen and (min-width: 320px) {
 
     body {
