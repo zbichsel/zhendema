@@ -5,14 +5,12 @@
         right: 0;
         height: 100vh;
         width: 100vw;
-        /* box-sizing: border-box; */
-        /* background-color: var(--color-bg); */
         animation: swish 1s linear forwards;
     }
 
     h1 {
         animation: shadow 3s infinite alternate;
-        animation-delay: 2.15s;
+        animation-delay: 1s;
     }
 
 
@@ -98,7 +96,7 @@
     }
 }
 @media only screen and (min-width: 768px) {
-    .wrapper, .wrapper>div, #bg-animation, #bg-animation2 {
+    .wrapper, .wrapper>div, #bg-animation2 {
         display: none;
     }
     h1 {

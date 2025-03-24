@@ -73,7 +73,7 @@ function createQuizStructure() {
 
     const timerText = document.createElement('span');
     timerText.id = 'timer-text';
-    timerText.textContent = 'Time Left: ';
+    // timerText.textContent = 'Time Left: ';
 
     const timer = document.createElement('span');
     timer.id = 'timer';
@@ -252,7 +252,7 @@ function displayQuestionsTwo() {
 
     questionText.innerHTML = currentQuestion.question;
 
-    const inputAnswer = document.createElement("input");
+    const inputAnswer = document.createElement("textarea");
     inputAnswer.type = "text";
     inputAnswer.id = "userAnswer";
     inputAnswer.classList.add("input-answer");
