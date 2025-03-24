@@ -10,8 +10,6 @@
 
 body {
     font-family: var(--font-family-body);
-    background-color: var(--color-bg);
-    color: var(--color-fg);
     overflow-x: hidden;
 }
 
@@ -34,13 +32,13 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px auto;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 0.7rem;
 }
 
 #question-container {
     margin: 0 auto;
-    padding: 10px;
+    padding: 0.7rem;
     text-align: center;
     font-size: 1rem;
     width: 50vw;
@@ -50,16 +48,18 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 0.7rem;
 }
 
 .answer-buttons {
-    background-color: var(--color-bg);
-    color: var(--color-fg);
-    border: 1px solid var(--color-fg);
     border-radius: 2rem;
     cursor: pointer;
-    padding: 10px;
+    padding: 0.7rem;
+}
+
+.answer-buttons:hover {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
 }
 
 #start-button {
@@ -67,19 +67,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: var(--color-bg);
-    color: var(--color-fg);
+    padding: 0.7rem;
+    border-radius: 1.4rem;
     width: 50%;
-    margin: 2px auto;
-}
-
-#start-button:hover {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
-    border: 1px solid var(--color-bg);
+    margin: 0.14rem auto;
 }
 
 .newContainer {
@@ -87,53 +78,49 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
-    padding: 10px;
-    width: 70%;
-    border-radius: 20px;
+    margin: 0 auto;
+    padding: 0..8rem;
 }
 
 #test-question-text {
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
+    text-align: center;
+    font-size: 1.25rem;
     margin: 0 auto;
-    padding: 22px;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
 }
 
 #input-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
-    padding: 10px;
 }
 
-input {
-    font-size: 18px;
-    margin: 4px;
-    max-width: 100%;
-    padding: 3%;
-    border-radius: 10px;
-    border: 1px solid black;
+textarea {
+    aspect-ratio: 1/1;
+    width: 80vw;
+    padding: 0.8rem;
+    margin: 0.8rem auto;
+    font-family: var(--font-family-body);
+    border-radius: 0.7rem;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+textarea::placeholder {
+    color: var(--color-fg);
 }
 
 #checkButton {
-    font-size: 20px;
-    margin: 4px;
-    padding: 6px;
-    border-radius: 10px;
-    border: 1px solid black;
-    background-color: var(--color-bg);
-    color: var(--color-fg);
-    width: 90%;
-    max-width: 100%;
-}
-
-#checkButton:hover {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
-    border: 1px solid var(--color-bg);
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    width: 80vw;
 }
 
 #new-start-button {
@@ -141,19 +128,10 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border: 1px solid black;
+    padding: 0.7rem;
     border-radius: 20px;
-    background-color: var(--color-bg);
-    color: var(--color-fg);
     width: 50%;
-    margin: 2px auto;
-}
-
-#new-start-button:hover {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
-    border: 1px solid var(--color-bg);
+    margin: 0.14rem auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -161,8 +139,71 @@ input {
         color: var(--color-bg);
         background-color: var(--color-fg);
     }
-    #bg-animation2 {
+    #start-button {
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+        border: 0.07rem solid var(--color-bg);
+        box-shadow: var(--color-bg) 0 0 0.35rem;
+    }
+    #start-button:hover {
         background-color: var(--color-fg);
+        color: var(--color-bg);
+        border: 0.07rem solid var(--color-fg);
+    }
+    #start-button:active {
+        border: 0.07rem solid var(--color-fg);
+    }
+    #new-start-button {
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+        border: 0.07rem solid var(--color-bg);
+        box-shadow: var(--color-bg) 0 0 0.35rem;
+    }
+    #new-start-button:hover {
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+        border: 0.07rem solid var(--color-fg);
+    }
+    #new-start-button:active {
+        border: 0.07rem solid var(--color-fg);
+    }
+    textarea {
+        border: 0.07rem solid var(--color-bg);
+        background-color: rgb(49, 49, 49);
+        color: var(--color-bg);
+    }
+    textarea::placeholder {
+        color: var(--color-bg);
+    }
+    textarea:focus {
+        outline: none;
+        border: 0.15rem solid var(--color-bg);
+    }
+    #checkButton {
+        border: 0.07rem solid var(--color-bg);
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+        box-shadow: 0 0 0.35rem var(--color-bg);
+    }
+    #checkButton:hover {
+        border: 0.07rem solid var(--color-fg);
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+    }
+    #checkButton:active {
+        box-shadow: 0 0 0.7rem var(--color-bg);
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+    }
+    .answer-buttons {
+        border: 0.07rem solid var(--color-bg);
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+        box-shadow: var(--color-bg) 0 0 0.28rem;
+    }
+    .answer-buttons:hover {
+        background-color: var(--color-fg);
+        color: var(--color-bg);
     }
 }
 
@@ -171,8 +212,80 @@ input {
         color: var(--color-fg);
         background-color: var(--color-bg);
     }
-    #bg-animation2 {
+
+    #start-button {
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+        border: 0.07rem solid var(--color-fg);
+        box-shadow: var(--color-fg) 0 0 0.35rem;
+    }
+
+    #start-button:hover {
         background-color: var(--color-bg);
+        color: var(--color-fg);
+        border: 0.07rem solid var(--color-bg);
+    }
+
+    #start-button:active {
+        border: 0.07rem solid var(--color-bg);
+    }
+
+    #new-start-button {
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+        border: 0.07rem solid var(--color-fg);
+        box-shadow: var(--color-fg) 0 0 0.35rem;
+    }
+
+    #new-start-button:hover {
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+        border: 0.07rem solid var(--color-bg);
+    }
+
+    #new-start-button:active {
+        border: 0.07rem solid var(--color-bg);
+    }
+
+    textarea {
+        border: 0.07rem solid var(--color-fg);
+    }
+
+    textarea::placeholder {
+        color: var(--color-fg);
+    }
+
+    textarea:focus {
+        outline: none;
+        border: 0.15rem solid var(--color-fg);
+    }
+
+    #checkButton {
+        border: 0.07rem solid var(--color-fg);
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+    }
+
+    #checkButton:hover {
+        border: 0.07rem solid var(--color-bg);
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+    }
+
+    #checkButton:active {
+        box-shadow: 0 0 0.7rem var(--color-fg);
+        background-color: var(--color-bg);
+        color: var(--color-fg);
+    }
+    .answer-buttons {
+        border: 0.07rem solid var(--color-fg);
+        background-color: var(--color-fg);
+        color: var(--color-bg);
+        box-shadow: var(--color-fg) 0 0 0.28rem;
+    }
+    .answer-buttons:hover {
+        background-color: var(--color-bg);
+        color: var(--color-fg);
     }
 }
 
@@ -183,7 +296,7 @@ input {
     }
 
     h1 {
-        padding: 4px;
+        padding: 0.28rem;
         font-size: 4rem;
         font-weight: 600;
         cursor: default;
@@ -194,10 +307,10 @@ input {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 10px auto;
-        padding: 20px;
+        margin: 0.7rem auto;
+        padding: 1.4rem;
         width: 75%;
-        gap: 10px;
+        gap: 0.7rem;
     }
 
     .quiz-container {
@@ -206,11 +319,11 @@ input {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        padding: 10px;
+        padding: 0.7rem;
     }
 
     #question-container {
-        font-size: 24px;
+        font-size: 1.68rem;
         cursor: default;
         width: 100%;
         margin: 0;
@@ -219,27 +332,47 @@ input {
     #answer-buttons {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        padding: 10px;
+        gap: 0.35rem;
+        padding: 0.7rem;
     }
 
     .answer-buttons {
-        font-size: 14px;
+        font-size: 0.98rem;
     }
 
     #start-button {
         width: 80%;
-        box-shadow: var(--color-fg) 0 0 5px;
         cursor: pointer;
         font-size: 1rem;
     }
 
     #new-start-button {
         width: 80%;
-        box-shadow: var(--color-fg) 0 0 5px;
         cursor: pointer;
         font-size: 1rem;
     }
+    #timer {
+        font-size: 6rem;
+        animation: time 60s linear forwards;
+        
+    }
+}
+
+@keyframes time {
+    0% { color: green; }
+    10% { color: green;}
+    20% { color: green;}
+    30% { color: green;}
+    40% { color: green;}
+    45% { color: green; }
+    48% { color: green; }
+    49% { color: green; }
+    50% { color: red; }
+    60% { color: red; }
+    70% { color: red; }
+    80% { color: red; }
+    90% { color: red; }
+    100% { color: red; }
 }
 
 @media only screen and (min-width: 768px) {}
