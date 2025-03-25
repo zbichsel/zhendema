@@ -40,7 +40,6 @@ h1 {
     margin: 0 auto;
     padding: 0.7rem;
     text-align: center;
-    font-size: 1rem;
     width: 50vw;
 }
 
@@ -57,13 +56,7 @@ h1 {
     padding: 0.7rem;
 }
 
-.answer-buttons:hover {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
-}
-
 #start-button {
-    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +77,6 @@ h1 {
 
 #test-question-text {
     text-align: center;
-    font-size: 1.25rem;
     margin: 0 auto;
     margin-bottom: 1rem;
     padding: 0 2rem;
@@ -116,7 +108,6 @@ textarea::placeholder {
 
 #checkButton {
     text-align: center;
-    font-size: 1.5rem;
     margin: 1rem auto;
     padding: 0.8rem;
     border-radius: 1rem;
@@ -124,7 +115,6 @@ textarea::placeholder {
 }
 
 #new-start-button {
-    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,10 +190,6 @@ textarea::placeholder {
         background-color: var(--color-bg);
         color: var(--color-fg);
         box-shadow: var(--color-bg) 0 0 0.28rem;
-    }
-    .answer-buttons:hover {
-        background-color: var(--color-fg);
-        color: var(--color-bg);
     }
 }
 
@@ -283,21 +269,18 @@ textarea::placeholder {
         color: var(--color-bg);
         box-shadow: var(--color-fg) 0 0 0.28rem;
     }
-    .answer-buttons:hover {
-        background-color: var(--color-bg);
-        color: var(--color-fg);
-    }
 }
 
 @media only screen and (min-width: 320px) {
 
     body {
         overflow-x: hidden;
+        font-size: 22px;
     }
 
     h1 {
+        font-size: 60px;
         padding: 0.28rem;
-        font-size: 4rem;
         font-weight: 600;
         cursor: default;
     }
@@ -323,7 +306,6 @@ textarea::placeholder {
     }
 
     #question-container {
-        font-size: 1.68rem;
         cursor: default;
         width: 100%;
         margin: 0;
@@ -336,43 +318,19 @@ textarea::placeholder {
         padding: 0.7rem;
     }
 
-    .answer-buttons {
-        font-size: 0.98rem;
-    }
-
     #start-button {
         width: 80%;
         cursor: pointer;
-        font-size: 1rem;
     }
 
     #new-start-button {
         width: 80%;
         cursor: pointer;
-        font-size: 1rem;
     }
     #timer {
         font-size: 6rem;
         animation: time 60s linear forwards;
-        
     }
-}
-
-@keyframes time {
-    0% { color: green; }
-    10% { color: green;}
-    20% { color: green;}
-    30% { color: green;}
-    40% { color: green;}
-    45% { color: green; }
-    48% { color: green; }
-    49% { color: green; }
-    50% { color: red; }
-    60% { color: red; }
-    70% { color: red; }
-    80% { color: red; }
-    90% { color: red; }
-    100% { color: red; }
 }
 
 @media only screen and (min-width: 768px) {}
