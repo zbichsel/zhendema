@@ -13,7 +13,7 @@ if (prefersDarkScheme.matches) {
 const quizQuestionsOne = [
     {
         question: "你叫什么名字？",
-        options: ["What time is it?", "Do you like to eat Korean food?", "What's your name?", "What time should we go to the supermarket?"],
+        options: ["What time is it?", "Do you like to eat Korean food?", "What's your name?", "What time should we go?"],
         correctAnswer: "What's your name?"
     },
     {
