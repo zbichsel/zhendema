@@ -1,72 +1,6 @@
 @media only screen and (min-width: 320px) {
-    #bg-animation2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 100vw;
-        animation: swish 1s linear forwards;
-    }
-
     h1 {
         animation: shadow 3s infinite alternate;
-        animation-delay: 1s;
-    }
-
-
-    @keyframes expose {
-        0% {
-            width: 100vw;
-        }
-
-        25% {
-            width: 75vw;
-        }
-
-        50% {
-            width: 50vw;
-        }
-
-        75% {
-            width: 25vw;
-        }
-
-        100% {
-            width: 0vw;
-            visibility: hidden;
-        }
-    }
-
-    @keyframes exposeDiv {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-350%);
-        }
-    }
-
-    @keyframes swish {
-        0% {
-            width: 100vw;
-        }
-
-        25% {
-            width: 75vw;
-        }
-
-        50% {
-            width: 50vw;
-        }
-
-        75% {
-            width: 25vw;
-        }
-
-        100% {
-            width: 0vw;
-            visibility: hidden;
-        }
     }
 
     @keyframes shadow {
@@ -94,12 +28,62 @@
             text-shadow: 0rem 0rem 1rem violet, 0rem 0rem 2rem red, 0rem 0rem 3rem orange;
         }
     }
-}
-@media only screen and (min-width: 768px) {
-    .wrapper, .wrapper>div, #bg-animation2 {
-        display: none;
-    }
-    h1 {
-        animation-delay: 0s;
+
+    @keyframes time {
+        0% {
+            color: green;
+        }
+
+        10% {
+            color: green;
+        }
+
+        20% {
+            color: green;
+        }
+
+        30% {
+            color: green;
+        }
+
+        40% {
+            color: green;
+        }
+
+        45% {
+            color: green;
+        }
+
+        48% {
+            color: green;
+        }
+
+        49% {
+            color: green;
+        }
+
+        50% {
+            color: red;
+        }
+
+        60% {
+            color: red;
+        }
+
+        70% {
+            color: red;
+        }
+
+        80% {
+            color: red;
+        }
+
+        90% {
+            color: red;
+        }
+
+        100% {
+            color: red;
+        }
     }
 }

@@ -12,34 +12,54 @@ if (prefersDarkScheme.matches) {
 //=======================
 const quizQuestionsOne = [
     {
-        question: "你喜欢吃韩国菜？",
-        options: ["What time is it?", "Do you like to eat Korean food?", "Where is the library?", "What time should we go to the supermarket?"],
-        correctAnswer: "Do you like to eat Korean food?"
+        question: "你叫什么名字？",
+        options: ["What time is it?", "Do you like to eat Korean food?", "What's your name?", "What time should we go to the supermarket?"],
+        correctAnswer: "What's your name?"
     },
     {
-        question: "明天下午他们会做飞机去美国，对不对？",
-        options: ["Tomorrow afternoon they will fly to the USA, right?", "This afternoon he will take a taxi to the train station.", "She and I will go to the cafe tomorrow morning", "Where is her new bed?"],
-        correctAnswer: "Tomorrow afternoon they will fly to the USA, right?"
+        question: "他是我的新老师。",
+        options: ["She is our teacher", "He is going to the park", "He has give yuan.", "He is my new teacher."],
+        correctAnswer: "He is my new teacher."
     },
     {
-        question: "我也有一节新中文课。",
-        options: ["I have math class.", "I also have a new Chinese class.", "I will go to the park.", "Do you like Chinese food or Korean food?"],
-        correctAnswer: "I also have a new Chinese class."
+        question: "哎呀，今天我有三节课。",
+        options: ["I have math class.", "Uh oh, I have a new class.", "Oh no, I have three classes today.", "Do you like going to school?"],
+        correctAnswer: "Oh no, I have three classes today."
     },
     {
-        question: "你喜欢茶还是咖啡？",
-        options: ["Do you like coke or pepsi?", "Do you want to talk a walk?", "Do you like tea or coffee?", "Where is the supermarket?"],
-        correctAnswer: "Do you like tea or coffee?"
+        question: "嗨，凯文，很高兴认识你。",
+        options: ["Hi, Kevin, nice to meet you.", "Hi, Mary, nice to meet you.", "Hi, Mary, welcome.", "Hi, Kevin, have a great day."],
+        correctAnswer: "Hi, Kevin, nice to meet you."
     },
     {
-        question: "明天我们去图书馆吧！",
-        options: ["Let's go to the library tomorrow!", "I will go to the park.", "Where is the supermarket?", "Do you like Chinese food or Korean food?"],
-        correctAnswer: "Let's go to the library tomorrow!"
+        question: "凯文和我都有一节课。",
+        options: ["We, both, have class today.", "Kevin and I, both, have a class.", "Mary and I, both, have history class.", "Kevin is my history teacher."],
+        correctAnswer: "Kevin and I, both, have a class."
     },
     {
-        question: "我女儿的床很漂亮。",
-        options: ["My dad's couch is very comfortable.", "My daughter's bed is very beautiful.", "I have a new car.", "Where is the library?"],
-        correctAnswer: "My daughter's bed is very beautiful."
+        question: "我去第二站台。",
+        options: ["There are 3 platforms.", "I am going to the first platform.", "I have a new car.", "I am going to the second platform."],
+        correctAnswer: "I am going to the second platform."
+    },
+    {
+        question: "北京很有名。",
+        options: ["Beijing is famous.", "Beijing is a big city.", "Beijing is a small city.", "Beijing is my hometown."],
+        correctAnswer: "Beijing is famous."
+    },
+    {
+        question: "地铁很便宜。",
+        options: ["The subway is expensive.", "The subway is cheap.", "The subway is fast.", "The subway is slow."],
+        correctAnswer: "The subway is cheap."
+    },
+    {
+        question: "玛丽，你会怎么去机场？",
+        options: ["Mary, how will you go to the airport?", "Mary, do you like to go to the airport?", "Mary, when do you go to the airport?", "Mary, where is the airport?"],
+        correctAnswer: "Mary, how will you go to the airport?"
+    },
+    {
+        question: "北京很远，我会坐飞机。",
+        options: ["Beijing is far, I will go by bus.", "Beijing is far, I will take a taxi.", "Beijing is far, I will take a train.", "Beijing is far, I will take a plane."],
+        correctAnswer: "Beijing is far, I will take a plane."
     }
 ];
 
@@ -169,28 +189,44 @@ document.getElementById('start-button').addEventListener('click', startQuizOne);
 // WORK IN PROGRESS
 const quizQuestionsTwo = [
     {
-        question: "你喜欢吃韩国菜？",
-        correctAnswer: "Do you like to eat Korean food?"
+        question: "这四个包子多少钱？",
+        correctAnswer: "How much are these four buns?"
     },
     {
-        question: "明天下午他们会做飞机去美国，对不对？",
-        correctAnswer: "Tomorrow afternoon they will fly to the USA, right?"
+        question: "那三瓶牛奶八元。",
+        correctAnswer: "Those three bottles of milk are eight yuan."
     },
     {
-        question: "我也有一节新中文课。",
-        correctAnswer: "I also have a new Chinese class."
+        question: "我想送她一条白色的围巾。",
+        correctAnswer: "I want to give her a white scarf."
     },
     {
-        question: "你喜欢茶还是咖啡？",
-        correctAnswer: "Do you like tea or coffee?"
+        question: "你想喝一杯咖啡还是茶？",
+        correctAnswer: "Would you like to drink a cup of coffee or tea?"
     },
     {
-        question: "明天我们去图书馆吧！",
-        correctAnswer: "Let's go to the library tomorrow!"
+        question: "那条绿色的裙子很有名。",
+        correctAnswer: "That green skirt is famous."
     },
     {
-        question: "我女儿的床很漂亮。",
-        correctAnswer: "My daughter's bed is very beautiful."
+        question: "玛丽会喜欢那条围巾吗？",
+        correctAnswer: "Will Mary like that scarf?"
+    },
+    {
+        question: "这条绿色的裙子很漂亮。",
+        correctAnswer: "This green skirt is beautiful."
+    },
+    {
+        question: "祝你生日快乐， 玛丽！",
+        correctAnswer: "Happy birthday to you, Mary!"
+    },
+    {
+        question: "我会坐公交车去长城。",
+        correctAnswer: "I will take a bus to go to the Great Wall."
+    },
+    {
+        question: "我会坐出租车去机场。",
+        correctAnswer: "I will take a taxi to go to the airport."
     }
 ];
 
@@ -311,8 +347,8 @@ function endQuizTwo() {
 
     const questionContainer = document.querySelector(".newContainer");
     questionContainer.innerHTML = `
-        <h2>Quiz beendet!</h2>
-        <p>Dein Ergebnis: ${newScoreTwo} von ${quizQuestionsTwo.length}</p>
+        <h2>Quiz finished!</h2>
+        <p>Your score: ${newScoreTwo} out of ${quizQuestionsTwo.length}</p>
         <p>Score Percentage: ${scorePercentage}%</p>
     `;
 }
