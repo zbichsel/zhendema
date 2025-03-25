@@ -90,12 +90,13 @@ h1 {
 
 textarea {
     aspect-ratio: 1/1;
-    width: 80vw;
+    width: 75vw;
     padding: 0.8rem;
     margin: 0.8rem auto;
     font-family: var(--font-family-body);
     border-radius: 0.7rem;
     resize: none;
+    font-size: 22px;
 }
 
 textarea:focus {
