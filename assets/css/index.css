@@ -41,6 +41,7 @@ h1 {
     padding: 0.7rem;
     text-align: center;
     width: 50vw;
+    font-size: 24px;
 }
 
 #answer-buttons {
@@ -54,6 +55,7 @@ h1 {
     border-radius: 2rem;
     cursor: pointer;
     padding: 0.7rem;
+    font-size: 18px;
 }
 
 #start-button {
@@ -80,6 +82,7 @@ h1 {
     margin: 0 auto;
     margin-bottom: 1rem;
     padding: 0 2rem;
+    font-size: 24px;
 }
 
 #input-container {
@@ -90,7 +93,7 @@ h1 {
 
 textarea {
     aspect-ratio: 1/1;
-    width: 75vw;
+    width: 80%;
     padding: 0.8rem;
     margin: 0.8rem auto;
     font-family: var(--font-family-body);
@@ -112,7 +115,8 @@ textarea::placeholder {
     margin: 1rem auto;
     padding: 0.8rem;
     border-radius: 1rem;
-    width: 80vw;
+    width: 50%;
+    font-size: 22px;
 }
 
 #new-start-button {
